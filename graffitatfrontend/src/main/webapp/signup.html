@@ -30,7 +30,7 @@
 								<td><input path="username" ng-model="Username" ng-change="ValidateUsername()" type="text" class="form-control form-input"  placeholder="Enter Username" autofocus="autofocus"/></td>
 							</tr>
 							<tr ng-show="UsernameError">
-							<td class="text-danger error-font">Username cannot be empty</td>							  		
+							<td class="text-danger error-font">Username length has to be minimum 8 characters</td>							  		
 							</tr>
 
 							<tr>
@@ -44,7 +44,7 @@
 								<td><input path="password" type="password" ng-model="Password" ng-change="ValidatePassword()" class="form-control form-input" placeholder="Enter Password"/></td>								
 							</tr>
 							<tr ng-show="PasswordError">
-							<td class="text-danger error-font">Password must be greater than 8 characters</td>
+							<td class="text-danger error-font">Password must have minimum eight characters, at least one uppercase letter, one lowercase letter and one number</td>
 							</tr>
 							
 							<tr>

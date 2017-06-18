@@ -27,8 +27,8 @@ app.controller("signupController",['$scope','SignUpService','$location','$window
 	$scope.ValidateUsername = function()
 	{
 		$scope.UsernameTouched = true;
-		var reg = /^$/;
-		$scope.UsernameError = reg.test( $scope.Username );
+		var reg = /^.{8,}$/;
+		$scope.UsernameError = !reg.test( $scope.Username );
 		$scope.CheckOverallError();
 	}
 	
@@ -49,7 +49,7 @@ app.controller("signupController",['$scope','SignUpService','$location','$window
 	$scope.ValidatePassword = function()
 	{
 		$scope.PasswordTouched = true;
-		var reg = /^.{8,20}$/;
+		var reg = /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/;
 		$scope.PasswordError = !reg.test( $scope.Password );
 		$scope.ConfirmPasswordError = ( $scope.ConfirmPassword != $scope.Password );
 		$scope.CheckOverallError();
