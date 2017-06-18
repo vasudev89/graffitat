@@ -125,14 +125,23 @@ app.controller("signupController",['$scope','SignUpService','$location','$window
 	{
 		$scope.showSignupProgress = true;
 		
-			var day = $scope.Date.getDate(); //Date of the month: 2 in our example
-			day = (day.length == 1)?"0" + day : day;
-			var month = $scope.Date.getMonth() + 1; //Month of the Year: 0-based index, so 1 in our example
-			month = (month.length == 1)?"0" + month : month;
-			var year = $scope.Date.getFullYear() //Year: 2013
+			 var date = '';
+		
+			try
+			{
+				var day = $scope.Date.getDate(); //Date of the month: 2 in our example
+				day = (day.length == 1)?"0" + day : day;
+				var month = $scope.Date.getMonth() + 1; //Month of the Year: 0-based index, so 1 in our example
+				month = (month.length == 1)?"0" + month : month;
+				var year = $scope.Date.getFullYear() //Year: 2013
 
-			var date = day + '-' + month + '-' + year;
-
+				date = day + '-' + month + '-' + year;
+			}
+			catch(e)
+			{
+				date = '';
+			}
+			
 			var json = 	{
 					"Username" : $scope.Username,
 					"Email" : $scope.Email ,
