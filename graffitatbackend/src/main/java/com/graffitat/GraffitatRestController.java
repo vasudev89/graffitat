@@ -4,6 +4,10 @@ import java.security.Principal;
 import java.util.List;
 
 import org.json.simple.JSONObject;
+import org.junit.Test;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,10 +53,30 @@ public class GraffitatRestController {
 			u.setPhone(data.get("Phone").toString());
 			u.setRole("ROLE_USER");
 			u.setUsername(data.get("Username").toString());
+	
+			/*MyTests m = new MyTests();
 			
-			userdao.addUser(u);
+			m.u = u;*/
 			
-			json.put("msg", "User Added Successfully");
+			/*Result result = JUnitCore.runClasses(MyTests.class);
+			
+		    for (Failure failure : result.getFailures()) {
+		    	System.out.println(failure.toString());
+		    }
+				
+		    System.out.println(result.wasSuccessful());
+			
+		    if( result.wasSuccessful() )*/
+		    {
+		    	userdao.addUser(u);
+		    	json.put("msg", "User Added Successfully");
+		    }
+		    /*else
+		    {
+		    	json.put("msg", "Error Adding User");
+		    }*/
+			
+			
 			
 		} else {
 			json.put("msg", "User Already Exists");
