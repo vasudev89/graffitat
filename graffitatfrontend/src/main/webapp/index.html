@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+
+	<!-- <link rel="import" href="/head-meta"> -->
+
+	<!--  -->
+	<!--  -->
+
+	
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="resources/references/css/style.css">
+	
+	<script type="text/javascript" src="resources/references/js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>	
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+	<!--  -->
+	<!--  -->
+
+</head>
+
+<script src ="app.js"></script>
+
+<script src ="indexController.js"></script>
+<script src ="UserService.js"></script>
+
+<script src ="homeController.js"></script>
+<script src ="loadController.js"></script>
+<script src ="signupController.js"></script>
+<script src ="SignUpService.js"></script>
+
+<body>
+
+<div class="body_left"></div>
+<div class="body_right"></div>
+
+<nav class="w3-sidenav w3-animate-left" style="text-align: left; font: bold normal 18px/50px Calibri, sans-serif; display:none;z-index:1225; font-size: 10px; top: -0px; width: 300px;">
+  <!-- <a href="javascript:void(0)" onclick="w3_close()" 
+  class="btn btn-danger" style="border-radius: 0px;">&times;</a> -->
+  <a href="#/home" class="w3-large navigation-element" onclick="w3_close()">Home</a>
+  <a href="#/signup" class="w3-large navigation-element" onclick="w3_close()">Sign Up</a>
+</nav>
+
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"></div>
+
+<div class="w3-container" style="z-index: 425; left: -10px; margin-left: 20px;">
+  <span class="w3-opennav w3-xxlarge" onclick="w3_open()" style="background: none; left: 0px; padding: 20px; z-index: 425;">&#9776;</span>
+  
+</div>  
+     
+<script>
+function w3_open() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+    document.getElementsByClassName("w3-overlay")[0].style.display = "block";
+}
+function w3_close() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+    document.getElementsByClassName("w3-overlay")[0].style.display = "none";
+}
+</script>
+
+
+<!--  -->
+
+	
+	<div id="ViewDiv" ng-view></div>
+
+</body>
+
+</html>
