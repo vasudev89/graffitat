@@ -23,7 +23,7 @@ app.config(function($routeProvider){
 	
 	.when('/load',{
 	
-		template : 'load.html',
+		templateUrl : 'load.html',
 		controller  : 'loadController'
 		
 	})  

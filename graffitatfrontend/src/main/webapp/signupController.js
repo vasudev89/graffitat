@@ -5,10 +5,9 @@ app.controller("signupController",['$scope','SignUpService','$location','$window
 	$scope.SignupSuccess = '';
 	$scope.SignupFailure = '';
 
-	/*if( $window.sessionStorage.getItem("currentUser") != null && $window.sessionStorage.getItem("currentUser") != undefined )
+	if( ( $window.sessionStorage.getItem("currentUser") != null && $window.sessionStorage.getItem("currentUser") != undefined ) )
 	{
-		$scope.LoginEmail = $window.sessionStorage.getItem("currentUser");
-		$scope.LoginStatus = false;
+		$location.path('/load');
 	}
 	
 	
@@ -18,7 +17,7 @@ app.controller("signupController",['$scope','SignUpService','$location','$window
 		$scope.LoginStatus = true;
 		
 		$location.path('/home');
-	}*/
+	}
 	
 	
 	

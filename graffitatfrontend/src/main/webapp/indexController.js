@@ -4,8 +4,13 @@ app.controller("indexController",['$scope','UserService','$location','$window','
 	
 	$scope.LoginEmail = '';
 	$scope.LoginPassword = '';
-	
+
 	$scope.InvalidLogin = true;
+	
+	if( ( $window.sessionStorage.getItem("currentUser") != null && $window.sessionStorage.getItem("currentUser") != undefined ) )
+	{
+		$location.path('/load');
+	}
 	
 	$scope.Loading = false;
 	
